@@ -11,11 +11,10 @@ categories: Coding
 你也知道：
 {% highlight C %}
 int a = 1;
-int *p;
+int *p = &a;            /* 将a的地址赋值给p */
 
-p = &a;             /* 将a的地址赋值给p */
-*p = 3;             /* 将p指向位置的数据修改为3 */
-printf("%d\n", a);  /* 所以这里将输出3, 而不是1 */
+*p = 3;                 /* 将p指向位置的数据修改为3 */
+printf("%d\n", a);      /* 所以这里将输出3, 而不是1 */
 {% endhighlight %}
 
 
@@ -26,10 +25,10 @@ printf("%d\n", a);  /* 所以这里将输出3, 而不是1 */
 
 {% highlight C %}
 unsigned int a = 0x40490fda;    /* 十六进制无符号整数 40490fa */
-
 unsigned int *p = &a;
-unsigned short *sp = p;         /* 这边会出Warning，先忽略 */
-unsigned char *cp = p;
+
+unsigned short *sp = (unsigned short *)p;   /* 类型转换 */
+unsigned char *cp = (unsigned char *)p;
 
 printf("%x\n", *p);             /* %x十六进制 */
 printf("%x\n", *sp);
@@ -49,7 +48,7 @@ printf("%x\n", *cp);
 接着上文，再来两行。
 
 {% highlight C %}
-float *fp = (float *)ip;
+float *fp = (float *)p;
 printf("%f\n", *fp);
 {% endhighlight %}
 
@@ -59,10 +58,13 @@ printf("%f\n", *fp);
 
 这一定不是巧合 Σ(ﾟДﾟ)
 
-这时候，输出它们的地址（`%p`输出指针）
+这时候，输出它们的地址
 
 {% highlight C %}
-printf("%p\n%p\n%p\n%p\n", p, sp, cp, fp);
+printf("%p\n", p);      /* %p 输出指针地址 */
+printf("%p\n", sp);
+printf("%p\n", cp);
+printf("%p\n", fp);
 {% endhighlight %}
 
 结果可能会变化，但是4个值之间永远是相等的。
@@ -85,19 +87,22 @@ printf("%p\n%p\n%p\n%p\n", p, sp, cp, fp);
 
 `intel x86`以`little-endian`顺序存储数据，所以在内存中
 
-    da  <-p    p,sp,cp,fp 都指向这里
+    da  <-  p,sp,cp,fp 都指向这里
     0f
     49
     40
 
 `*p`取出4字节，`*sp`取出2字节，`*cp`取出1字节，就出现了上述现象。
 
-`*fp`也是4字节，二进制pattern按照一定规则被“翻译”成浮点数，参见`IEEE 754`。
+`*fp`也是4字节，二进制pattern按照一定规则被“翻译”成浮点数，参见[IEEE 754](https://en.wikipedia.org/wiki/IEEE_754-1985)
 
 > 对指针进行加减运算，相当与对地址加减size
 
 {% highlight C %}
-printf("%p\n%p\n%p\n%p\n", p, p + 1, sp + 1, cp + 1);
+printf("%p\n", p);
+printf("%p\n", p + 1);
+printf("%p\n", sp + 1);
+printf("%p\n", cp + 1);
 {% endhighlight %}
 
 可以看到 `int *` 加了 4，`short *`加了2, `char *`加了1

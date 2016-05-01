@@ -7,14 +7,14 @@
 
 # Site settings
 title: Blog | CKJ
-email: ckj996@gmail.com
+email: iamckj@yeah.net
 description: > # this means to ignore newlines until "baseurl:"
-  I am a freshman at Xidian University.
-  I'm interested in computer systems.
-  I like open source, and I run Debian on my Pavilion 13.
+  Coding fun.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ckj996.github.io" # the base hostname & protocol for your site
 github_username:  ckj996
+name: Kaijie Chen
+occupation: Student at Xidian University
 
 # Build settings
 markdown: kramdown
