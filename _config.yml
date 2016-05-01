@@ -9,6 +9,7 @@
 title: Blog | CKJ
 email: iamckj@yeah.net
 description: > # this means to ignore newlines until "baseurl:"
+  Work hard, play hard.
   Coding fun.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ckj996.github.io" # the base hostname & protocol for your site
