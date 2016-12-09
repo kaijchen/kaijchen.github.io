@@ -4,17 +4,14 @@ title: About
 permalink: /about/
 ---
 
-I am studying computer science at Xidian University.
+I am ckj.
 
-I am interested in computer systems.
+I am a student in Xidian University,  
+majoring in computer science.
 
-I can do well in algorithms.
+I am interested in computer systems,  
+I am a ACM-ICPC contestant as well.
 
-I am CKJ.
-
-I love coding.
-
-I love open source.
-
-I run Debian on my Pavilion 13.
+I love open source.  
+I run Archlinux on my Pavilion 13 laptop.
 
