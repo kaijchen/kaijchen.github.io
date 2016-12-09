@@ -8,7 +8,9 @@ categories: perl
 	my	局部变量
 	state	相当于 C 中的 static
 	our	全局变量
-	local	全局变量的临时值（见下文）
+	local	临时覆盖全局变量
+
+一个 local 的示例
 
 ```perl
 #!/usr/bin/env perl
