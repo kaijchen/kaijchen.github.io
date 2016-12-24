@@ -2,7 +2,7 @@
 layout: post
 title:  "KMP模式匹配"
 date:   2016-06-07 16:16:41 +0800
-categories: Algorithm
+categories: posts
 ---
 
 关于模式匹配，就是在一个字符串里查找字串。

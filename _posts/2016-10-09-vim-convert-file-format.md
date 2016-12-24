@@ -2,7 +2,7 @@
 layout: post
 title:  "vim换行符转换"
 date:   2016-10-09 11:27:45 +0800
-categories: vim
+categories: notes
 ---
 `unix`、`dos`(windows)、`mac`(旧mac os，OS X 之前) 使用的换行符格式是不一样的，  
 所以传文件时需要修改换行符格式

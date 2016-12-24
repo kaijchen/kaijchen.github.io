@@ -2,7 +2,7 @@
 layout: post
 title:  "perl 中的 my state our local"
 date:   2016-12-09 15:29:05 +0800
-categories: perl
+categories: notes
 ---
 
 	my	局部变量
