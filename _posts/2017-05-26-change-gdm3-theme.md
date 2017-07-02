@@ -22,5 +22,6 @@ categories: notes
 [org/gnome/desktop/interface]
 gtk-theme='Arc-Darker'
 icon-theme='Arc'
+cursor-theme='Breeze'
 
 ```
